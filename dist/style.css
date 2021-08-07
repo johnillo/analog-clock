@@ -1,0 +1,174 @@
+* {
+  box-sizing: border-box;
+  font-family: sans-serif;
+  padding: 0;
+  margin: 0;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+body.transition,
+body.transition *,
+body.transition *:before {
+  transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+}
+body {
+  background-color: #eeeeee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  color: #373737;
+  flex-direction: column;
+}
+body.night {
+  background-color: rgb(27, 28, 32);
+  color: rgb(220, 220, 220);
+}
+#clock {
+  position: relative;
+  background-color: #fafafa;
+  height: min(80vh, 80vw);
+  width: min(80vh, 80vw);
+  border-radius: 100%;
+  overflow: hidden;
+}
+body.night #clock {
+  background-color: rgb(37, 38, 42);
+}
+#clock ul {
+  font-size: min(5vh, 5vw);
+  list-style-type: none;
+}
+#clock ul li {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  padding: 4%;
+}
+#clock ul li:nth-child(1) { transform: rotate(30deg); }
+#clock ul li:nth-child(1) div { transform: rotate(-30deg); }
+#clock ul li:nth-child(2) { transform: rotate(60deg); }
+#clock ul li:nth-child(2) div { transform: rotate(-60deg); }
+#clock ul li:nth-child(3) { transform: rotate(90deg); }
+#clock ul li:nth-child(3) div { transform: rotate(-90deg); }
+#clock ul li:nth-child(4) { transform: rotate(120deg); }
+#clock ul li:nth-child(4) div { transform: rotate(-120deg); }
+#clock ul li:nth-child(5) { transform: rotate(150deg); }
+#clock ul li:nth-child(5) div { transform: rotate(-150deg); }
+#clock ul li:nth-child(6) { transform: rotate(180deg); }
+#clock ul li:nth-child(6) div { transform: rotate(-180deg); }
+#clock ul li:nth-child(7) { transform: rotate(210deg); }
+#clock ul li:nth-child(7) div { transform: rotate(-210deg); }
+#clock ul li:nth-child(8) { transform: rotate(240deg); }
+#clock ul li:nth-child(8) div { transform: rotate(-240deg); }
+#clock ul li:nth-child(9) { transform: rotate(270deg); }
+#clock ul li:nth-child(9) div { transform: rotate(-270deg); }
+#clock ul li:nth-child(10) { transform: rotate(300deg); }
+#clock ul li:nth-child(10) div { transform: rotate(-300deg); }
+#clock ul li:nth-child(11) { transform: rotate(330deg); }
+#clock ul li:nth-child(11) div { transform: rotate(-330deg); }
+.hand {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.hand:before {
+  content: ' ';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 1em;
+  background-color: #373737;
+}
+body.night .hand:before {
+  background-color: rgb(220, 220, 220);
+}
+.center {
+  position: absolute;
+  width: 4%;
+  height: 4%;
+  background-color: #373737;
+  border-radius: 100%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.center:before {
+  content: ' ';
+  background-color: #fafafa;
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-51%, -51%);
+  border-radius: 100%;
+}
+body.night .center {
+  background-color: rgb(220, 220, 220);
+}
+body.night .center:before {
+  background-color: rgb(37, 38, 42);
+}
+#second {
+  transform: rotate(-90deg);
+}
+#second:before {
+  height: 0.50%;
+  width: 52%;
+  background-color: #c64b4b;
+  margin-top: -0.25%;
+  left: 43%;
+}
+#minute {
+  transform: rotate(-90deg);
+}
+#minute:before {
+  height: 1.5%;
+  width: 45%;
+  margin-top: -0.75%;
+}
+#hour {
+  transform: rotate(-90deg);
+}
+#hour:before {
+  height: 2.5%;
+  width: 30%;
+  margin-top: -1.25%;
+}
+#date {
+  position: absolute;
+  color: #373737;
+  top: 50%;
+  right: 15%;
+  font-size: min(4vh, 4vw);
+  transform: translateY(-50%);
+}
+body.night #date {
+  color: rgb(230, 230, 230);
+}
+footer {
+  position: fixed;
+  font-size: min(3vh, 12px);
+  opacity: 0.5;
+  text-transform: uppercase;
+  bottom: 2.5%;
+}
+footer a {
+  text-decoration: none;
+  color: inherit;
+}
+footer a:hover {
+  text-decoration: underline;
+}
+@media (max-height: 400px) {
+  footer {
+    display: none;
+  }
+}
