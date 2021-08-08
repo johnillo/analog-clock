@@ -1,9 +1,4 @@
-var second = document.getElementById('second');
-var minute = document.getElementById('minute');
-var hour = document.getElementById('hour');
-var dow = document.getElementById('dow');
-var day = document.getElementById('day');
-
+var second, minute, hour, dow, day;
 var DAY_OF_WEEK = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
 
 function getRotation60Deg(value) {
@@ -35,6 +30,11 @@ function render() {
 }
 
 window.onload = function () {
+  second = document.getElementById('second');
+  minute = document.getElementById('minute');
+  hour = document.getElementById('hour');
+  dow = document.getElementById('dow');
+  day = document.getElementById('day');
   render();
   setInterval(render, 16);
   setTimeout(function () {
